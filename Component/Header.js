@@ -1,25 +1,37 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import { useNavigation } from '@react-navigation/native';
 
 const Header = () => {
+  const navigation = useNavigation();
   return (
     <View style={styles.header}>
-      
+
       <View style={styles.icons}>
-        <TouchableOpacity style={styles.button}>
+        {/* <TouchableOpacity style={styles.button}>
           <Icon name="list" size={20} color="#444" />
-        </TouchableOpacity>
-        
-        <Text style={styles.title}>Shop tạp</Text>
-      </View>
-      
-      <View style={styles.profile}>
+        </TouchableOpacity> */}
+
+        {/* <Text style={styles.title}>Vĩnh Lợi</Text> */}
         <Image
-          source={require('../assets/us.jpg')}
-          style={styles.profileImage}
+          source={require('../assets/images/pc.jpg')}
+          style={{ width: 370, height: 30 }}
         />
       </View>
+
+      {/* <View style={styles.profile}>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => navigation.navigate('User')}
+        >
+          <Image
+            source={require('../assets/us.jpg')}
+            style={styles.profileImage}
+          />
+        </TouchableOpacity>
+
+      </View> */}
     </View>
   );
 };

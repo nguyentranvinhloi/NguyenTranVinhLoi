@@ -13,23 +13,21 @@ const AllProduct = (product) => {
 
   const [cartItems, setCartItems] = useState([]);
 
-  //const {addToCart} = useContext(CartContext);
+  //const { addToCart } = useContext(CartContext);
+
+  const handleProductPress = (product) => {
+    navigation.navigate('SingleProduct', { product });
+  };
 
   const addToCart = (product) => {
     // Tạo một bản sao của mảng cartItems
     const updatedCart = [...cartItems];
-
-     // Kiểm tra xem sản phẩm đã tồn tại trong giỏ hàng chưa
      const existingItem = updatedCart.find(item => item.id === product.id);
-
      if (existingItem) {
-       // Nếu sản phẩm đã tồn tại, tăng số lượng lên 1
        existingItem.quantity += 1;
      } else {
-    //   // Nếu sản phẩm chưa tồn tại, thêm sản phẩm vào giỏ hàng
        updatedCart.push({...product, quantity: 1});
      }
-
     // Cập nhật trạng thái giỏ hàng
     setCartItems(updatedCart);
     alert("Sản phẩm đã được thêm vào giỏ hàng!");
@@ -57,7 +55,7 @@ const AllProduct = (product) => {
 //-----------------------------------------------------------------------
 
   const renderProduct = ({ item, navigation }) => (
-    <TouchableOpacity style={styles.productItem} onPress={() => navigation.navigate('ProductDetail', { product: item })}>
+    <TouchableOpacity style={styles.productItem} onPress={() => navigation.navigate('Chi tiết sản phẩm', { product: item })}>
       <Image source={{ uri: item.images[0] }} style={styles.productImage} />
       <Text style={styles.productName}>{item.title}</Text>
       <Text style={styles.productPrice}>${item.price}</Text>

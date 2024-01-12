@@ -9,6 +9,8 @@ import Home from './Component/Home';
 import ProductDetail from './Component/Product/ProductDetail';
 import Cart from './Component/Cart/ProductCart';
 import Login from './Component/Login';
+import Register from './Component/Register';
+import User from './Component/User';
 
 const Stack = createStackNavigator();
 
@@ -17,10 +19,12 @@ function App() {
     <NavigationContainer>
       <Header />
       <Stack.Navigator>
-        <Stack.Screen name="Home" component={Home} />
-        <Stack.Screen name="ProductDetail" component={ProductDetail} />
-        <Stack.Screen name="Login" component={Login} />
-        <Stack.Screen name="Cart" component={Cart} />
+        <Stack.Screen name="Trang chủ" component={Home} />
+        <Stack.Screen name="Chi tiết sản phẩm" component={ProductDetail} />
+        <Stack.Screen name="Đăng nhập" component={Login} />
+        <Stack.Screen name="Đăng ký" component={Register} />
+        <Stack.Screen name="Giỏ hàng" component={Cart} />
+        <Stack.Screen name="Tài khoản" component={User} />
       </Stack.Navigator>
 
       <Footer />

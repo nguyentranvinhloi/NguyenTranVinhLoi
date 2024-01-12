@@ -11,7 +11,7 @@ const Footer = () => {
     <View style={styles.footer}>
       <TouchableOpacity
         style={styles.button}
-        onPress={() => navigation.navigate('Home')}
+        onPress={() => navigation.navigate('Trang chủ')}
       >
         <Icon name="home" size={20} color="#444" />
       </TouchableOpacity>
@@ -23,7 +23,7 @@ const Footer = () => {
 
       <TouchableOpacity
         style={styles.button}
-        onPress={() => navigation.navigate('Cart')}
+        onPress={() => navigation.navigate('Giỏ hàng')}
       >
         <Icon name="shopping-cart" size={20} color="#444" />
         <Text style={styles.buttonText}></Text>
@@ -31,13 +31,13 @@ const Footer = () => {
 
       <TouchableOpacity
         style={styles.button}
-        onPress={() => navigation.navigate('Login')}
+        onPress={() => navigation.navigate('Đăng nhập')}
       >
         <Icon name="sign-in" size={20} color="#444" />
       </TouchableOpacity>
       <TouchableOpacity
         style={styles.button}
-        onPress={() => navigation.navigate('ProductDetail')}
+        onPress={() => navigation.navigate('Tài khoản')}
       >
         <Icon name="cog" size={20} color="#444" />
       </TouchableOpacity>

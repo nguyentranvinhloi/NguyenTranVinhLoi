@@ -1,14 +1,17 @@
 import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
-import { Button, Image, SafeAreaView, StyleSheet, Text, TextInput, View } from 'react-native';
+import { Button, Image, SafeAreaView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 export default function Login() {
     const [titleText, setTitleText] = useState("Login");
 
+    const navigation = useNavigation(); // Đặt hook useNavigation trong hàm component
 
     const onPressTitle = () => {
         setTitleText("Login");
     };
+    
     return (
         <View style={styles.container}>
             {/* <View style={styles.d}></View> */}
@@ -19,25 +22,34 @@ export default function Login() {
             />
 
             <Text style={styles.head} onPress={onPressTitle}>
-                Login
+                Đăng nhập
                 {'\n'}
                 {'\n'}
                 <SafeAreaView>
                     <TextInput
                         style={styles.input}
-                        placeholder="Email"
+                        placeholder="Tài khoản"
                     />
                     <TextInput
                         style={styles.input}
-                        placeholder="Password" 
+                        placeholder="Mật khẩu" 
                     />
                     <Text>{'\n'}</Text>
                     <Button
                         style={styles.input}
-                        title="Login"
+                        title="Đăng nhập"
                         color="#841584"
+                        onPress={() => navigation.navigate('Trang chủ')}
                     />
-                    <Text style={styles.phu}>Forgot password?</Text>
+                    <Text style={styles.phu}>Quên mật khẩu?</Text>
+                    <View style={styles.catetitle}>
+                        <Text style={styles.phu}>Bạn chưa có tài khoản?</Text>
+                        <TouchableOpacity onPress={() => navigation.navigate('Đăng ký')}>
+                            <Text style={styles.phuu}>Đăng ký</Text>
+                        </TouchableOpacity>
+     
+                    </View>
+                    
                 </SafeAreaView>
 
             </Text>
@@ -85,11 +97,25 @@ const styles = StyleSheet.create({
         padding: 10,
     },
     phu: {
-        flex: 1,
+        //flex: 1,
         backgroundColor: '#ddd',
-        alignItems: 'center',
-        justifyContent: 'center',
+        marginLeft: 15,
+        //alignItems: 'center',
+        //justifyContent: 'center',
     },
+    phuu: {
+        //flex: 1,
+        backgroundColor: '#ddd',
+        color:"red",
+        //alignItems: 'center',
+        //justifyContent: 'center',
+        marginEnd: 15,
+    },
+    catetitle: {
+        flexDirection: "row",
+        justifyContent: "space-between",
+        marginTop: 15,
+      },
     // button: {
     //     height: 25,
     //     width: 50,

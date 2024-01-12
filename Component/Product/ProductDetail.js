@@ -9,9 +9,9 @@ const ProductDetail = ({ route }) => {
     setRating(numStars);
   };
 
-  // const handleAddToCart = () => {
-  //   // Xử lý logic thêm sản phẩm vào giỏ hàng
-  // };
+  const handleAddToCart = () => {
+    // Xử lý logic thêm sản phẩm vào giỏ hàng
+  };
 
   return (
     <View style={styles.container}>
